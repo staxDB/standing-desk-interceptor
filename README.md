@@ -33,15 +33,15 @@ The checksum is a CRC16 Modbus Checksum ([07 12 06 06 7d](https://crccalc.com/?c
 A button press has the message type `0x02` and can be used as a fixed command. The checksum is steady and doesn't have to be recalculated.
 
 Those are the known commands from the button controller to the motor controller with their respective button names.
-```
-commands = {
-    'reset': '\x9b\x06\x02\x00\x00\x6c\xa1\x9d',
-    'Mod2':  '\x9b\x06\x02\x08\x00\xac\xa6\x9d',
-    'Mod1':  '\x9b\x06\x02\x04\x00\xac\xa3\x9d',
-    'down':  '\x9b\x06\x02\x02\x00\x0c\xa0\x9d',
-    'up':    '\x9b\x06\x02\x01\x00\xfc\xa0\x9d'
-}
-```
+
+| Start Byte | Length | Type | Payload | Checksum | End Byte | Name |
+|---|---|---|---|---|---|---|
+| 9b | 06 | 02 | 01 00 | FC A0 | 9d | UP |
+| 9b | 06 | 02 | 02 00 | 0C A0 | 9d | DOWN |
+| 9b | 06 | 02 | 04 00 | AC A3 | 9d | M1 |
+| 9b | 06 | 02 | 08 00 | AC A6 | 9d | M2 |
+| 9b | 06 | 02 | 10 00 | AC AC | 9d | M3 |
+| 9b | 06 | 02 | 20 00 | AC B8 | 9d | M |
 
 ## Height
 The height has the MessageType `0x12` and the payload is a simple 7 Segment display output.
