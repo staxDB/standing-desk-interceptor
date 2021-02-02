@@ -26,6 +26,7 @@ Every Command starts with 0x9b and ends with 0x9d. The second byte is the length
 | 9b | 06 | 02 | 00 00 | 6c a1 | 9d |
 | 9b | 07 | 12 | 06 06 7d | 38 b7 | 9d |
 | 9b | 04 | 11 | | 7c c3| 9d |
+| 9b | 04 | 13 | | bd 42 | 9d |
 | 9b | 04 | 15 | | bf c2 | 9d |
 
 The checksum is a CRC16 Modbus Checksum ([07 12 06 06 7d](https://crccalc.com/?crc=071206067d&method=crc16&datatype=hex&outtype=hex) results in 0x38b7) over the `Length+Type+Payload`
@@ -78,5 +79,5 @@ Converting each byte to is binary representation and mapping each bit to a segme
 Mapping this to the example above we can display the number `116` as a 7-Segment output. (don't want to include pictures, just believe me or try it out)
 
 ## Unkown MessageTypes
-We don't know about the MessageTypes `0x11` and `0x15`. They are send by the motorcontroller.
+We don't know about the MessageTypes `0x11`, `0x13`, `0x15`. They are send by the motorcontroller.
 They seem to be constant across different tables and don't bear any payload.
