@@ -24,15 +24,10 @@ Every Command starts with 0x9b and ends with 0x9d. The second byte is the length
 |---|---|---|---|---|---|
 | 9b | 06 | 02 | 00 00 | 6c a1 | 9d |
 | 9b | 07 | 12 | 06 06 7d | 38 b7 | 9d |
+| 9b | 04 | 11 | | 7c c3| 9d |
+| 9b | 04 | 15 | | bf c2 | 9d |
 
 The Checksum is a CRC16 Modbus Checksum over the `Length+Type+Payload`
-
-Two more Message Types exist, which we currently don't have any clue about:
-
-| Start Byte | Length | Type | Payload | End Byte |
-|---|---|---|---|---|
-| 9b | 04 | 11 | 7c c3 | 9d |
-| 9b | 04 | 15 | bf c2 | 9d |
 
 ## Button presses
 A button press has the message type `0x02` and can be used as a fixed command. The checksum is steady and doesn't have to be recalculated.
@@ -80,3 +75,7 @@ Converting each byte to is binary representation and mapping each bit to a segme
 |P3|1|0|1|1|1|1|1|0|
 
 Mapping this to the example above we can display the number `116` as a 7-Segment output. (don't want to include pictures, just believe me or try it out)
+
+## Unkown MessageTypes
+We don't know about the MessageTypes `0x11` and `0x15`. They are send by the motorcontroller.
+They seem to be constant across different tables and don't bear any payload.
