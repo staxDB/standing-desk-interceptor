@@ -27,7 +27,7 @@ Every Command starts with 0x9b and ends with 0x9d. The second byte is the length
 | 9b | 04 | 11 | | 7c c3| 9d |
 | 9b | 04 | 15 | | bf c2 | 9d |
 
-The Checksum is a CRC16 Modbus Checksum over the `Length+Type+Payload`
+The checksum is a CRC16 Modbus Checksum ([07 12 06 06 7d](https://crccalc.com/?crc=071206067d&method=crc16&datatype=hex&outtype=hex) results in 0x38b7) over the `Length+Type+Payload`
 
 ## Button presses
 A button press has the message type `0x02` and can be used as a fixed command. The checksum is steady and doesn't have to be recalculated.
