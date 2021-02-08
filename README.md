@@ -46,6 +46,8 @@ Those are the known commands from the button controller to the motor controller 
 | 9b | 06 | 02 | 20 00 | AC B8 | 9d | M |
 
 ## Height
+(Credit goes to mikrocontroller forum https://www.mikrocontroller.net/topic/493524)
+
 The height has the MessageType `0x12` and the payload is a simple 7 Segment display output.
 
 As an example we look at the height answer: `9b 07 12 06 06 7d 38 b7 9d` which represents `116`
