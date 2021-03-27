@@ -4,16 +4,16 @@ It should work on any other flexispot desk as well, as i suspect they use the sa
 
 # RJ45 Pins
 
-| PIN | Colour | Name |
-|---|---|---|
-| 1 | brown | RES |
-| 2 | white | SWIM |
-| 3 | purple | ? |
-| 4 | red | WAKE |
-| 5 | green | RX/TX (cp/mc) |
-| 6 | black | TX/RX (cp/mc) |
-| 7 | blue | GND |
-| 8 | yellow | VCC |
+| RJ45 PIN | Original cable color | Ethernet cable color | Description       |ESP8266 GPIO|
+|----------|----------------------|----------------------|-------------------|------------|
+| 1        | brown                | white-orange         | RES               |            |
+| 2        | white                | orange               | SWIM              |            |
+| 3        | purple               | white-green          | N/C               |            |
+| 4        | red                  | blue                 | Enable/Awake      |D2          |
+| 5        | green                | white-blue           | RX (of remote)    |D6          |
+| 6        | black                | green                | TX (of remote)    |D5          |
+| 7        | blue                 | white-brown          | GND               |GND         |
+| 8        | yellow               | brown                | VDD (5V)          |VIN         |
 
 # Using SWIM
 The SWIM Debug interface is on the RJ45 Port, but not possible to use, due to set Read Protection, which can only be disabled by overwriting the Chip itself.
